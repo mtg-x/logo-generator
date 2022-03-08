@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>MTG Logo Generator</title>
+</head>
+
+<body>
+    <h1 class="text-center">MTG Logo Generator</h1>
+    <div class="flex flex-direction-column align-items-center">
+        <div>
+            <div class="text-center">Your community city</div>
+            <input type="text" id="communityNameInput" placeholder="Paris" />
+        </div>
+        <div>
+            <div class="text-center">Your community focus</div>
+            <input type="text" id="communityTagsInput" placeholder=".NET" />
+        </div>
+    </div>
+
+    <div class="flex flex-direction-column justify-content-center align-items-center">
+        <div class="flex flex-direction-row">
+            <div id="generatedLogo" class="flex flex-direction-column mt-2 mb-2">
+                <div class="flex flex-direction-row align-items-center">
+                    <div class="logo-left">
+                        <img class="logo" src="./images/logo-left.png" />
+                    </div>
+                    <div class="mtg">
+                        MTG
+                    </div>
+                    <div class="logo-center">
+                        <img class="logo" src="./images/logo-center.png" />
+                    </div>
+                    <div id="communityNameLabel" class="communityName">
+
+                    </div>
+                    <div class="logo-right">
+                        <img class="logo" src="./images/logo-right.png" />
+                    </div>
+                </div>
+                <div id="communityTagsLabel" class="tags flex flex-direction-row justify-content-flex-end"></div>
+            </div>
+        </div>
+    </div>
+    <div class="canvas__container">
+        <canvas id="cnvs" class="canvas__canvas"></canvas>
+        <img src="" id="mirror" class="canvas__mirror" />
+    </div>
+
+    <!-- <a href="#" class="button" id="downloadLogo" download="my-file-name.png">Download</a> -->
+    <script src="./app.js"></script>
+</body>
+
+</html>
