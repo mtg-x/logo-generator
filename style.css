@@ -9,7 +9,6 @@ html {
 
 body {
     font-family: Segoe UI, Helvetica, Arial, sans-serif;
-    transition: background-color 100ms ease-in-out, color 150ms ease-in-out;
     background-color: var(--bg-color);
     color: var(--font-color);
 }
@@ -35,7 +34,15 @@ body {
 #generated-logo {
     color: var(--color-logo-primary);
     background-color: var(--bg-color);
+}
+
+body, #generated-logo {
     transition: background-color 100ms ease-in-out, color 150ms ease-in-out;
+
+}
+
+#transparent-details {
+    display: none;
 }
 
 .tags {

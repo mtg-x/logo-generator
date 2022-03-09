@@ -6,19 +6,24 @@ const communityNameDOM = document.querySelector("#communityNameLabel");
 const communityTagsDOM = document.querySelector("#communityTagsLabel");
 const generateButtonDOM = document.querySelector("#generateLogo");
 const canvasDOM = document.querySelector("#logoCanvas");
-
+const transparentDetailsDom = document.querySelector("#transparent-details");
 const generateLogoDOM = document.querySelector("#generateLogo");
+
 communityNameInputDOM.addEventListener('keyup', getCommunityName);
 communityTagsInputDOM.addEventListener('keyup', getCommunityTags);
 generateButtonDOM.addEventListener('click', generateLogo);
-
 document.querySelector("input[name=bgcolor][value=dark]").addEventListener('change', function () {
     document.body.classList = "theme-dark";
+    transparentDetailsDom.style.display = "none";
 });
-
 document.querySelector("input[name=bgcolor][value=light]").addEventListener('change', function () {
     document.body.classList = "theme-light";
+    transparentDetailsDom.style.display = "none";
 });
+document.querySelector("input[name=bgcolor][value=transparent]").addEventListener('change', function () {
+    transparentDetailsDom.style.display = "block";
+});
+
 
 const citiesList = ['Paris', 'Aix', 'Toulouse', 'Clermont', 'Lille', 'Strasbourg', 'Luxembourg', 'Lyon', 'Grenoble', 'Bordeaux', 'Nantes', 'Rennes', 'Tours'];
 const tagsList = ['Azure', '.NET', 'DevOps', 'TypeScript']
