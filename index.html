@@ -12,19 +12,31 @@
 <body>
     <h1 class="text-center">MTG Logo Generator</h1>
     <div class="flex flex-direction-column align-items-center">
-        <div>
+        <div class="form-imput pb-1">
             <div class="text-center">Your community city</div>
             <input type="text" id="communityNameInput" placeholder="" />
         </div>
-        <div>
+        <div class="form-imput pb-1">
             <div class="text-center">Your community focus</div>
             <input type="text" id="communityTagsInput" placeholder="" />
+        </div>
+
+        <div class="form-imput pb-1">
+            <div class="text-center">Choose a background color</div>
+            <input type="radio" id="lightChoice" name="bgcolor" value="light">
+            <label for="lightChoice">Light</label>
+
+            <input type="radio" id="darkChoice" name="bgcolor" value="dark">
+            <label for="darkChoice">Dark</label>
+
+            <input type="radio" id="transparentChoice" name="bgcolor" value="transparent" checked>
+            <label for="transparentChoice">Transparent</label>
         </div>
     </div>
 
     <div class="flex flex-direction-column justify-content-center align-items-center">
         <div class="flex flex-direction-row">
-            <div id="generatedLogo" class="flex flex-direction-column mt-2 mb-2">
+            <div id="generatedLogo" class="flex flex-direction-column mt-2 mb-2 p-1">
                 <div class="flex flex-direction-row align-items-center">
                     <div class="logo-left">
                         <img class="logo" src="./images/logo-left.png" />
@@ -45,13 +57,12 @@
                 <div id="communityTagsLabel" class="tags flex flex-direction-row justify-content-flex-end"></div>
             </div>
         </div>
-    </div>
-    <div class="canvas__container">
-        <canvas id="cnvs" class="canvas__canvas"></canvas>
-        <img src="" id="mirror" class="canvas__mirror" />
+        <button id="generateLogo">Download</button>
+
     </div>
 
-    <!-- <a href="#" class="button" id="downloadLogo" download="my-file-name.png">Download</a> -->
+    <div id="logoCanvas"></div>
+    <script src="./htmltocanvas.js"></script>
     <script src="./app.js"></script>
 </body>
 

@@ -10,7 +10,7 @@ body {
 
 .tags {
     color: #00476d;
-    font-weight: 300;
+    font-weight: 400;
     font-size: .85rem;
     margin-top: -3px;
 }
@@ -39,7 +39,7 @@ body {
 }
 
 input[type="text"] {
-    padding: .4em;
+    padding: .5em;
 }
 
 .flex {
@@ -58,9 +58,11 @@ input[type="text"] {
 .justify-content-center {
     justify-content: center;
 }
+
 .justify-content-flex-end {
     justify-content: flex-end;
 }
+
 .align-items-center {
     align-items: center;
 }
@@ -73,6 +75,18 @@ input[type="text"] {
     margin-bottom: 2em;
 }
 
+.p-1 {
+    padding: 1em;
+}
+
+.pb-1 {
+    padding-bottom: 1em;
+}
+
 .text-center {
     text-align: center;
+}
+
+button {
+    padding: 0.5em 1em;
 }

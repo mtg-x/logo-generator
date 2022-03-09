@@ -4,10 +4,13 @@ const communityTagsInputDOM = document.querySelector("#communityTagsInput");
 const generatedLogo = document.querySelector("#generatedLogo");
 const communityNameDOM = document.querySelector("#communityNameLabel");
 const communityTagsDOM = document.querySelector("#communityTagsLabel");
+const generateButtonDOM = document.querySelector("#generateLogo");
+const canvasDOM = document.querySelector("#logoCanvas");
 
-const downloadLogoDOM = document.querySelector("#downloadLogo");
+const generateLogoDOM = document.querySelector("#generateLogo");
 communityNameInputDOM.addEventListener('keyup', getCommunityName);
 communityTagsInputDOM.addEventListener('keyup', getCommunityTags);
+generateButtonDOM.addEventListener('click', generateLogo);
 
 const citiesList = ['Paris', 'Aix', 'Toulouse', 'Clermont', 'Lille', 'Strasbourg', 'Luxembourg', 'Lyon', 'Grenoble', 'Bordeaux', 'Nantes', 'Rennes', 'Tours'];
 const tagsList = ['Azure', '.NET', 'DevOps', 'TypeScript']
@@ -28,4 +31,22 @@ function getCommunityTags() {
 
 function getRandomItem(cities) {
     return cities[Math.floor(Math.random() * cities.length)];
+}
+
+function generateLogo() {
+    const backgroundColor = document.querySelector('input[name=bgcolor]:checked').value;
+    let bgColor = "rgba(0,0,0,0)";
+    if (backgroundColor === 'light') {
+        bgColor = "rgb(255,255,255)";
+    } else if (backgroundColor === 'dark') {
+        bgColor = "rgb(0,0,0)";
+    }
+
+    html2canvas(generatedLogo, { backgroundColor: bgColor, removeContainer: true }).then(canvas => {
+        const image = canvas.toDataURL("image/png");
+        var aDownloadLink = document.createElement('a');
+        aDownloadLink.download = `MTG_${communityNameInputDOM.value}_logo.png`;
+        aDownloadLink.href = image;
+        aDownloadLink.click();
+    });
 }
