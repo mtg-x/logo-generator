@@ -12,24 +12,49 @@ const generateLogoDOM = document.querySelector("#generateLogo");
 communityNameInputDOM.addEventListener('keyup', getCommunityName);
 communityTagsInputDOM.addEventListener('keyup', getCommunityTags);
 generateButtonDOM.addEventListener('click', generateLogo);
-document.querySelector("input[name=bgcolor][value=dark]").addEventListener('change', function () {
-    document.body.classList = "theme-dark";
+
+const darkThemeRadioDOM = document.querySelector("input[name=bgcolor][value=dark]");
+darkThemeRadioDOM.addEventListener('change', function () {
+    document.body.classList = "theme-dark theme-dark-font";
     transparentDetailsDom.style.display = "none";
+    resetLogoFontColors();
+    darkFontRadioDOM.checked = true;
 });
-document.querySelector("input[name=bgcolor][value=light]").addEventListener('change', function () {
-    document.body.classList = "theme-light";
+
+const lightThemeRadioDOM = document.querySelector("input[name=bgcolor][value=light]")
+lightThemeRadioDOM.addEventListener('change', function () {
+    document.body.classList = "theme-light theme-light-font";
     transparentDetailsDom.style.display = "none";
+    resetLogoFontColors();
+    lightFontRadioDOM.checked = true;
 });
+
 document.querySelector("input[name=bgcolor][value=transparent]").addEventListener('change', function () {
     transparentDetailsDom.style.display = "block";
 });
 
+const darkFontRadioDOM = document.querySelector("input[name=fontcolor][value=dark]");
+darkFontRadioDOM.addEventListener('change', function () {
+    generatedLogo.classList.add("theme-dark-font");
+    generatedLogo.classList.remove("theme-light-font");
+});
+
+const lightFontRadioDOM = document.querySelector("input[name=fontcolor][value=light]")
+lightFontRadioDOM.addEventListener('change', function () {
+    generatedLogo.classList.add("theme-light-font");
+    generatedLogo.classList.remove("theme-dark-font");
+});
 
 const citiesList = ['Paris', 'Aix', 'Toulouse', 'Clermont', 'Lille', 'Strasbourg', 'Luxembourg', 'Lyon', 'Grenoble', 'Bordeaux', 'Nantes', 'Rennes', 'Tours'];
 const tagsList = ['Azure', '.NET', 'DevOps', 'TypeScript']
 
 communityNameInputDOM.placeholder = `ex: ${getRandomItem(citiesList)}`;
 communityTagsInputDOM.placeholder = `ex: ${getRandomItem(tagsList)}`;
+
+function resetLogoFontColors() {
+    generatedLogo.classList.remove("theme-light-font");
+    generatedLogo.classList.remove("theme-dark-font");
+}
 
 function getCommunityName() {
     const communityName = communityNameInputDOM.value;

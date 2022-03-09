@@ -15,16 +15,22 @@ body {
 
 .theme-light {
     --bg-color: #fff;
-    --color-logo-primary: #737373;
-    --color-logo-secondary: #00476d;
     --font-color: #424242;
 }
 
 .theme-dark {
     --bg-color: #1f1f1f;
+    --font-color: #eeeeee;
+}
+
+.theme-light-font {
+    --color-logo-primary: #737373;
+    --color-logo-secondary: #00476d;
+}
+
+.theme-dark-font {
     --color-logo-primary: #eeeeee;
     --color-logo-secondary: #058bd2;
-    --font-color: #eeeeee;
 }
 
 .theme-dark input {
