@@ -13,11 +13,11 @@ communityTagsInputDOM.addEventListener('keyup', getCommunityTags);
 generateButtonDOM.addEventListener('click', generateLogo);
 
 document.querySelector("input[name=bgcolor][value=dark]").addEventListener('change', function () {
-    document.body.classList = "dark";
+    document.body.classList = "theme-dark";
 });
 
 document.querySelector("input[name=bgcolor][value=light]").addEventListener('change', function () {
-    document.body.classList = "light";
+    document.body.classList = "theme-light";
 });
 
 const citiesList = ['Paris', 'Aix', 'Toulouse', 'Clermont', 'Lille', 'Strasbourg', 'Luxembourg', 'Lyon', 'Grenoble', 'Bordeaux', 'Nantes', 'Rennes', 'Tours'];
@@ -43,7 +43,8 @@ function getRandomItem(cities) {
 
 function generateLogo() {
 
-    html2canvas(generatedLogo, { backgroundColor: bgColor, removeContainer: true }).then(canvas => {
+    const options = {};
+    html2canvas(generatedLogo, options).then(canvas => {
         const image = canvas.toDataURL("image/png");
         var aDownloadLink = document.createElement('a');
         aDownloadLink.download = `MTG_${communityNameInputDOM.value}_logo.png`;

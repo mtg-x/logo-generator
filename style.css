@@ -1,7 +1,6 @@
 html, body {
     margin: 0;
     padding: 0;
-    color: #424242;
 }
 
 html {
@@ -11,44 +10,40 @@ html {
 body {
     font-family: Segoe UI, Helvetica, Arial, sans-serif;
     transition: background-color 100ms ease-in-out, color 150ms ease-in-out;
-
+    background-color: var(--bg-color);
+    color: var(--font-color);
 }
 
-.light {
-    background-color: #fff;
-    color: #424242
+.theme-light {
+    --bg-color: #fff;
+    --color-logo-primary: #737373;
+    --color-logo-secondary: #00476d;
+    --font-color: #424242;
 }
 
-.light #generated-logo {
-    color: #737373
+.theme-dark {
+    --bg-color: #1f1f1f;
+    --color-logo-primary: #eeeeee;
+    --color-logo-secondary: #058bd2;
+    --font-color: #eeeeee;
 }
 
-.light #generated-logo .tags {
-    color: #00476d;
-}
-
-.dark {
-    background-color: #1f1f1f;
-    color: #eeeeee
-}
-
-.dark input {
+.theme-dark input {
     background-color: #efefef;
 }
 
-.dark #generated-logo {
-    color: #eeeeee
-}
-
-.dark #generated-logo .tags {
-    color: #058bd2;
+#generated-logo {
+    color: var(--color-logo-primary);
+    background-color: var(--bg-color);
+    transition: background-color 100ms ease-in-out, color 150ms ease-in-out;
 }
 
 .tags {
     font-weight: 700;
     font-size: .85rem;
-    margin-top: -19px;
+    margin-top: -20px;
     margin-right: 52px;
+    color: var(--color-logo-secondary)
 }
 
 .logo-left {
@@ -69,7 +64,7 @@ body {
 
 .mtg, .communityName {
     font-size: 44px;
-    margin-top: -8px;
+    margin-top: -10px;
 }
 
 .form-label {
