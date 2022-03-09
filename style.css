@@ -10,7 +10,7 @@ body {
 
 .tags {
     color: #00476d;
-    font-weight: 400;
+    font-weight: 600;
     font-size: .85rem;
     margin-top: -3px;
 }
@@ -31,8 +31,11 @@ body {
     margin-left: -32px;
 }
 
-.mtg, .communityName {
+#generatedLogo {
     color: #737373;
+}
+
+.mtg, .communityName {
     font-size: 44px;
     font-weight: 500;
     margin-top: -8px;

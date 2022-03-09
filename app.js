@@ -6,11 +6,14 @@ const communityNameDOM = document.querySelector("#communityNameLabel");
 const communityTagsDOM = document.querySelector("#communityTagsLabel");
 const generateButtonDOM = document.querySelector("#generateLogo");
 const canvasDOM = document.querySelector("#logoCanvas");
+const fontColorDOM = document.querySelector('#font-color');
 
 const generateLogoDOM = document.querySelector("#generateLogo");
 communityNameInputDOM.addEventListener('keyup', getCommunityName);
 communityTagsInputDOM.addEventListener('keyup', getCommunityTags);
 generateButtonDOM.addEventListener('click', generateLogo);
+
+fontColorDOM.addEventListener('change', changeFontColor);
 
 const citiesList = ['Paris', 'Aix', 'Toulouse', 'Clermont', 'Lille', 'Strasbourg', 'Luxembourg', 'Lyon', 'Grenoble', 'Bordeaux', 'Nantes', 'Rennes', 'Tours'];
 const tagsList = ['Azure', '.NET', 'DevOps', 'TypeScript']
@@ -49,4 +52,10 @@ function generateLogo() {
         aDownloadLink.href = image;
         aDownloadLink.click();
     });
+}
+
+function changeFontColor() {
+    const fontColor = fontColorDOM.value;
+
+    generatedLogo.style.color = fontColor;
 }
