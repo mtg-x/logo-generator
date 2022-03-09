@@ -4,15 +4,51 @@ html, body {
     color: #424242;
 }
 
+html {
+    min-height: 100vh;
+}
+
 body {
     font-family: Segoe UI, Helvetica, Arial, sans-serif;
+    transition: background-color 100ms ease-in-out, color 150ms ease-in-out;
+
+}
+
+.light {
+    background-color: #fff;
+    color: #424242
+}
+
+.light #generated-logo {
+    color: #737373
+}
+
+.light #generated-logo .tags {
+    color: #00476d;
+}
+
+.dark {
+    background-color: #1f1f1f;
+    color: #eeeeee
+}
+
+.dark input {
+    background-color: #efefef;
+}
+
+.dark #generated-logo {
+    color: #eeeeee
+}
+
+.dark #generated-logo .tags {
+    color: #058bd2;
 }
 
 .tags {
-    color: #00476d;
-    font-weight: 600;
+    font-weight: 700;
     font-size: .85rem;
-    margin-top: -3px;
+    margin-top: -19px;
+    margin-right: 52px;
 }
 
 .logo-left {
@@ -31,18 +67,21 @@ body {
     margin-left: -32px;
 }
 
-#generatedLogo {
-    color: #737373;
-}
-
 .mtg, .communityName {
     font-size: 44px;
-    font-weight: 600;
     margin-top: -8px;
 }
 
+.form-label {
+    margin-bottom: 0.5rem;
+}
+
 input[type="text"] {
-    padding: .5em;
+    padding: .75rem;
+    line-height: 1.5;
+    border: 1px solid #ced4da;
+    border-radius: 2px;
+    transition: border-color .15s ease-in-out
 }
 
 .flex {
@@ -71,19 +110,27 @@ input[type="text"] {
 }
 
 .mt-2 {
-    margin-top: 2em;
+    margin-top: 2rem;
 }
 
 .mb-2 {
-    margin-bottom: 2em;
+    margin-bottom: 2rem;
 }
 
 .p-1 {
-    padding: 1em;
+    padding: 1rem;
+}
+
+.fs-2 {
+    font-size: 2rem;
 }
 
 .pb-1 {
-    padding-bottom: 1em;
+    padding-bottom: 1rem;
+}
+
+.fw-700 {
+    font-weight: 700;
 }
 
 .text-center {
@@ -91,5 +138,5 @@ input[type="text"] {
 }
 
 button {
-    padding: 0.5em 1em;
+    padding: 0.5rem 1rem;
 }

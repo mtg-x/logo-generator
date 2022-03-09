@@ -1,19 +1,24 @@
 const communityNameInputDOM = document.querySelector("#communityNameInput");
 const communityTagsInputDOM = document.querySelector("#communityTagsInput");
 
-const generatedLogo = document.querySelector("#generatedLogo");
+const generatedLogo = document.querySelector("#generated-logo");
 const communityNameDOM = document.querySelector("#communityNameLabel");
 const communityTagsDOM = document.querySelector("#communityTagsLabel");
 const generateButtonDOM = document.querySelector("#generateLogo");
 const canvasDOM = document.querySelector("#logoCanvas");
-const fontColorDOM = document.querySelector('#font-color');
 
 const generateLogoDOM = document.querySelector("#generateLogo");
 communityNameInputDOM.addEventListener('keyup', getCommunityName);
 communityTagsInputDOM.addEventListener('keyup', getCommunityTags);
 generateButtonDOM.addEventListener('click', generateLogo);
 
-fontColorDOM.addEventListener('change', changeFontColor);
+document.querySelector("input[name=bgcolor][value=dark]").addEventListener('change', function () {
+    document.body.classList = "dark";
+});
+
+document.querySelector("input[name=bgcolor][value=light]").addEventListener('change', function () {
+    document.body.classList = "light";
+});
 
 const citiesList = ['Paris', 'Aix', 'Toulouse', 'Clermont', 'Lille', 'Strasbourg', 'Luxembourg', 'Lyon', 'Grenoble', 'Bordeaux', 'Nantes', 'Rennes', 'Tours'];
 const tagsList = ['Azure', '.NET', 'DevOps', 'TypeScript']
@@ -37,13 +42,6 @@ function getRandomItem(cities) {
 }
 
 function generateLogo() {
-    const backgroundColor = document.querySelector('input[name=bgcolor]:checked').value;
-    let bgColor = "rgba(0,0,0,0)";
-    if (backgroundColor === 'light') {
-        bgColor = "rgb(255,255,255)";
-    } else if (backgroundColor === 'dark') {
-        bgColor = "rgb(0,0,0)";
-    }
 
     html2canvas(generatedLogo, { backgroundColor: bgColor, removeContainer: true }).then(canvas => {
         const image = canvas.toDataURL("image/png");
@@ -52,10 +50,4 @@ function generateLogo() {
         aDownloadLink.href = image;
         aDownloadLink.click();
     });
-}
-
-function changeFontColor() {
-    const fontColor = fontColorDOM.value;
-
-    generatedLogo.style.color = fontColor;
 }

@@ -9,37 +9,34 @@
     <title>MTG Logo Generator</title>
 </head>
 
-<body>
-    <h1 class="text-center">MTG Logo Generator</h1>
+<body class="light">
+    <div class="text-center p-1 fs-2 fw-700">MTG Logo Generator</div>
     <div class="flex flex-direction-column align-items-center">
         <div class="form-imput pb-1">
-            <div class="text-center">Your community city</div>
+            <div class="text-center form-label">Your community city</div>
             <input type="text" id="communityNameInput" placeholder="" />
         </div>
         <div class="form-imput pb-1">
-            <div class="text-center">Your community focus</div>
+            <div class="text-center form-label">Your community focus</div>
             <input type="text" id="communityTagsInput" placeholder="" />
         </div>
 
         <div class="form-imput pb-1">
-            <div class="text-center">Choose a background color</div>
-            <input type="radio" id="lightChoice" name="bgcolor" value="light">
+            <div class="text-center form-label">Choose a background color</div>
+            <input type="radio" id="lightChoice" name="bgcolor" value="light" checked>
             <label for="lightChoice">Light</label>
 
             <input type="radio" id="darkChoice" name="bgcolor" value="dark">
             <label for="darkChoice">Dark</label>
 
-            <input type="radio" id="transparentChoice" name="bgcolor" value="transparent" checked>
+            <input type="radio" id="transparentChoice" name="bgcolor" value="transparent">
             <label for="transparentChoice">Transparent</label>
-
-            <input type="color" id="font-color" name="head" value="#737373">
-            <label for="head">Font color</label>
         </div>
     </div>
 
     <div class="flex flex-direction-column justify-content-center align-items-center">
         <div class="flex flex-direction-row">
-            <div id="generatedLogo" class="flex flex-direction-column mt-2 mb-2 p-1">
+            <div id="generated-logo" class="flex flex-direction-column mt-2 mb-2 p-1 fw-700">
                 <div class="flex flex-direction-row align-items-center">
                     <div class="logo-left">
                         <img class="logo" src="./images/logo-left.png" />
