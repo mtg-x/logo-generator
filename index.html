@@ -34,7 +34,7 @@
         </div>
         <div class="form-imput pb-1" id="transparent-details">
             <div class="text-center form-label">Choose a font color</div>
-            <input type="radio" id="lightFontChoice" name="fontcolor" value="dark">
+            <input type="radio" id="lightFontChoice" name="fontcolor" value="dark" checked>
             <label for="lightChoice">Light</label>
 
             <input type="radio" id="darkFontChoice" name="fontcolor" value="light">
@@ -44,25 +44,27 @@
 
     <div class="flex flex-direction-column justify-content-center align-items-center">
         <div class="flex flex-direction-row">
-            <div id="generated-logo" class="flex flex-direction-column mt-2 mb-2 p-1 fw-700">
-                <div class="flex flex-direction-row align-items-center">
-                    <div class="logo-left">
-                        <img class="logo" src="./images/logo-left.png" />
-                    </div>
-                    <div class="mtg">
-                        MTG
-                    </div>
-                    <div class="logo-center">
-                        <img class="logo" src="./images/logo-center.png" />
-                    </div>
-                    <div id="communityNameLabel" class="communityName">
+            <div id="generated-logo" class="flex flex-direction-column mt-2 mb-2 fw-700">
+                <div id="canva" class="p-1">
+                    <div class="flex flex-direction-row align-items-center">
+                        <div class="logo-left">
+                            <img class="logo" src="./images/logo-left.png" />
+                        </div>
+                        <div class="mtg">
+                            MTG
+                        </div>
+                        <div class="logo-center">
+                            <img class="logo" src="./images/logo-center.png" />
+                        </div>
+                        <div id="communityNameLabel" class="communityName">
 
+                        </div>
+                        <div class="logo-right">
+                            <img class="logo" src="./images/logo-right.png" />
+                        </div>
                     </div>
-                    <div class="logo-right">
-                        <img class="logo" src="./images/logo-right.png" />
-                    </div>
+                    <div id="communityTagsLabel" class="tags flex flex-direction-row justify-content-flex-end"></div>
                 </div>
-                <div id="communityTagsLabel" class="tags flex flex-direction-row justify-content-flex-end"></div>
             </div>
         </div>
         <button id="generateLogo">Download</button>

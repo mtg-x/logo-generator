@@ -51,6 +51,19 @@ const tagsList = ['Azure', '.NET', 'DevOps', 'TypeScript']
 communityNameInputDOM.placeholder = `ex: ${getRandomItem(citiesList)}`;
 communityTagsInputDOM.placeholder = `ex: ${getRandomItem(tagsList)}`;
 
+
+// Pre-fill Fields if present in URL
+const params = new URLSearchParams(window.location.search)
+if (params.has('city')) {
+    communityNameInputDOM.value = params.get('city');
+    getCommunityName();
+}
+if (params.has('tag')) {
+    communityTagsInputDOM.value = params.get('tag');
+    getCommunityTags();
+}
+
+
 function resetLogoFontColors() {
     generatedLogo.classList.remove("theme-light-font");
     generatedLogo.classList.remove("theme-dark-font");
@@ -73,10 +86,22 @@ function getRandomItem(cities) {
 
 function generateLogo() {
 
-    const options = {};
-    html2canvas(generatedLogo, options).then(canvas => {
+    const bg = getComputedStyle(generatedLogo).getPropertyValue('--bg-color');
+
+    let options = {
+        removeContainer: true,
+        backgroundColor: bg
+    };
+
+    if (document.querySelector("input[name=bgcolor][value=transparent]").checked) {
+        options.backgroundColor = 'rgba(0, 0, 0, 0)';
+
+    }
+
+    const canva = generatedLogo.querySelector('#canva');
+    html2canvas(canva, options).then(canvas => {
         const image = canvas.toDataURL("image/png");
-        var aDownloadLink = document.createElement('a');
+        const aDownloadLink = document.createElement('a');
         aDownloadLink.download = `MTG_${communityNameInputDOM.value}_logo.png`;
         aDownloadLink.href = image;
         aDownloadLink.click();
