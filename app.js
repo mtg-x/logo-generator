@@ -63,7 +63,6 @@ if (params.has('tag')) {
     getCommunityTags();
 }
 
-
 function resetLogoFontColors() {
     generatedLogo.classList.remove("theme-light-font");
     generatedLogo.classList.remove("theme-dark-font");

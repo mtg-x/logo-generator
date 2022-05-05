@@ -8,7 +8,7 @@ html {
 }
 
 body {
-    font-family: Segoe UI, Helvetica, Arial, sans-serif;
+    font-family: Lato, Helvetica, Arial, sans-serif;
     background-color: var(--bg-color);
     color: var(--font-color);
 }
@@ -69,6 +69,7 @@ body, #generated-logo {
 
 .logo-center {
     margin: 0 3px;
+    margin-top: -7px
 }
 
 .logo-right {
