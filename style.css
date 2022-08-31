@@ -44,7 +44,6 @@ body {
 
 body, #generated-logo {
     transition: background-color 100ms ease-in-out, color 150ms ease-in-out;
-
 }
 
 #transparent-details {
@@ -54,13 +53,14 @@ body, #generated-logo {
 .tags {
     font-weight: 700;
     font-size: .85rem;
-    margin-top: -20px;
-    margin-right: 52px;
+    margin-top: -17px; /* ajust offset between tags and text, align with bottom blue rectangle */
+    margin-right: 60px;
     color: var(--color-logo-secondary)
 }
 
 .logo-left {
-    margin-right: -32px;
+    align-self: start; /* align to the top of the flex box */
+    margin-right: -35px; /* ajust spacing between left logo and text */
 }
 
 .logo {
@@ -68,12 +68,13 @@ body, #generated-logo {
 }
 
 .logo-center {
-    margin: 0 3px;
-    margin-top: -7px
+    /* change with caution: used to align center dots with text *and* ajust vertical spacing between top and bottom logo rectangles and text*/
+    margin: 2px 3px 7px 3px;
 }
 
 .logo-right {
-    margin-left: -32px;
+    align-self: end; /* align to the bottom of the flex box */
+    margin-left: -35px; /* ajust spacing between right logo and text */
 }
 
 .mtg, .communityName {
