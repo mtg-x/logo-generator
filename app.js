@@ -51,18 +51,19 @@ const tagsList = ['Azure', '.NET', 'DevOps', 'TypeScript']
 communityNameInputDOM.placeholder = `ex: ${getRandomItem(citiesList)}`;
 communityTagsInputDOM.placeholder = `ex: ${getRandomItem(tagsList)}`;
 
-
 // Pre-fill Fields if present in URL
 const params = new URLSearchParams(window.location.search)
 if (params.has('city')) {
     communityNameInputDOM.value = params.get('city');
     getCommunityName();
 }
+
 if (params.has('tag')) {
     communityTagsInputDOM.value = params.get('tag');
     getCommunityTags();
 }
 
+// functions
 function resetLogoFontColors() {
     generatedLogo.classList.remove("theme-light-font");
     generatedLogo.classList.remove("theme-dark-font");
@@ -78,7 +79,6 @@ function getCommunityTags() {
     communityTagsDOM.innerHTML = tags;
 }
 
-
 function getRandomItem(cities) {
     return cities[Math.floor(Math.random() * cities.length)];
 }
@@ -86,10 +86,12 @@ function getRandomItem(cities) {
 function generateLogo() {
 
     const bg = getComputedStyle(generatedLogo).getPropertyValue('--bg-color');
+    const scale = document.querySelector("input[name=scaleFactor]:checked").value;
 
     let options = {
         removeContainer: true,
-        backgroundColor: bg
+        backgroundColor: bg,
+        scale: window.devicePixelRatio * scale
     };
 
     if (document.querySelector("input[name=bgcolor][value=transparent]").checked) {
